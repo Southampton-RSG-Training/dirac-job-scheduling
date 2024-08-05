@@ -426,7 +426,7 @@ In particular, we can see:
 - As we might expect the `JobState` is `RUNNING`, although it may be `PENDING` if waiting to be assigned to a node, or if we weren't fast enough running the `scontrol` command it might be `COMPLETED`
 - How long the job has run for (`RunTime`), and the job's maximum specified duration (`TimeLimit`)
 - The job's `SubmitTime`, as well as the job's `StartTime` for execution: this may be the actual start time, or the expected start time if set in the future. The expected `EndTime` is also specified, although if it isn't specified directly in the job script this isn't always exactly `StartTime` + specified duration; it's often rounded up, perhaps to the nearest minute.
-- The queue assigned for the job is the `cosma7-pauper` queue, and that the job is running on the `m7401` node
+- The queue assigned for the job is the `devel` queue, and that the job is running on the `dnode036` node
 - The resources assigned to the job are a single node (`NumNodes=1`) with 128 CPU cores, for a single task with 1 CPU core per task. Note that in this case we got more resources in terms of CPUs than what we asked for. For example in this instance, we can see that we actually obtained a node with 128 CPUs (although we won't use them)
 - We didn't specify a working directory within which to execute the job, so the default `WorkDir` is our home directory
 - The error and output file locations, as specified by `StdErr` and `StdOut`
